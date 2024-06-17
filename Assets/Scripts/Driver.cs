@@ -17,10 +17,10 @@ public class Driver : MonoBehaviour
         float frameDuration = Time.deltaTime; 
 
         float movingAmount = Input.GetAxis("Vertical") * movingSpeed * frameDuration;
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * frameDuration;
-
         if(movingAmount == 0) return;
-
+        
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * frameDuration;
+        
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, movingAmount, 0);
     }
